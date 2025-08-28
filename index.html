@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luberior - Gerenciamento Financeiro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Luberior</div>
+                <nav>
+                    <ul>
+                        <li><a href="#organizacao">Organização</a></li>
+                        <li><a href="#investimentos">Investimentos</a></li>
+                        <li><a href="#recursos">Recursos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Controle suas finanças com elegância</h1>
+            <p>Luberior oferece uma maneira minimalista e profissional de gerenciar seu dinheiro e alcançar liberdade financeira.</p>
+            <button class="btn">Começar Agora</button>
+        </div>
+    </section>
+
+    <section id="organizacao" class="calculator-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Organização Financeira</h2>
+                <p>Informe sua renda mensal e veja como distribuir seus recursos de forma inteligente</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="income">Renda Mensal (R$)</label>
+                        <input type="number" id="income" placeholder="Ex: 5000" value="5000">
+                    </div>
+                    
+                    <h3>Distribuição Recomendada</h3>
+                    
+                    <div class="form-group">
+                        <label for="necessidades">Necessidades (50%)</label>
+                        <input type="number" id="necessidades" readonly>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="poupanca">Poupança/Investimentos (20%)</label>
+                        <input type="number" id="poupanca" readonly>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="desejos">Desejos Pessoais (20%)</label>
+                        <input type="number" id="desejos" readonly>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="doacoes">Doações/Educação (10%)</label>
+                        <input type="number" id="doacoes" readonly>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-results">
+                    <h3>Resumo da Distribuição</h3>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Necessidades (Moradia, alimentação, transporte)</span>
+                        <span class="result-value" id="result-necessidades">R$ 2500</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Poupança/Investimentos</span>
+                        <span class="result-value" id="result-poupanca">R$ 1000</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Desejos Pessoais (Lazer, hobbies)</span>
+                        <span class="result-value" id="result-desejos">R$ 1000</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Doações/Educação</span>
+                        <span class="result-value" id="result-doacoes">R$ 500</span>
+                    </div>
+                    
+                    <div class="result-item" style="margin-top: 30px; padding-top: 20px; border-top: 2px solid var(--verde-principal);">
+                        <span class="result-label" style="font-weight: 700;">Total</span>
+                        <span class="result-value" style="font-weight: 800;" id="result-total">R$ 5000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="investimentos" class="investment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projeção de Investimentos</h2>
+                <p>Veja como seu dinheiro pode crescer ao longo do tempo com aplicações regulares</p>
+            </div>
+            
+            <div class="calculator-form" style="max-width: 500px; margin: 0 auto 50px;">
+                <div class="form-group">
+                    <label for="monthly-investment">Valor Mensal para Investir (R$)</label>
+                    <input type="number" id="monthly-investment" value="1000">
+                </div>
+                
+                <div class="form-group">
+                    <label for="interest-rate">Taxa de Retorno Anual (%)</label>
+                    <input type="number" id="interest-rate" value="10" step="0.1">
+                </div>
+                
+                <button class="btn" style="width: 100%;" onclick="calculateInvestment()">Calcular Projeção</button>
+            </div>
+            
+            <div class="investment-cards">
+                <div class="investment-card">
+                    <h3>1 Ano</h3>
+                    <div class="investment-amount" id="result-1year">R$ 12.617</div>
+                    <p>Total investido: R$ 12.000</p>
+                    <p>Juros: R$ 617</p>
+                </div>
+                
+                <div class="investment-card">
+                    <h3>5 Anos</h3>
+                    <div class="investment-amount" id="result-5year">R$ 77.437</div>
+                    <p>Total investido: R$ 60.000</p>
+                    <p>Juros: R$ 17.437</p>
+                </div>
+                
+                <div class="investment-card">
+                    <h3>10 Anos</h3>
+                    <div class="investment-amount" id="result-10year">R$ 206.552</div>
+                    <p>Total investido: R$ 120.000</p>
+                    <p>Juros: R$ 86.552</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recursos Poderosos</h2>
+                <p>Ferramentas projetadas para simplificar sua vida financeira</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Controle de Gastos</h3>
+                    <p>Monitore todos os seus gastos de forma organizada e visualize para onde seu dinheiro está indo.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Orçamentos Inteligentes</h3>
+                    <p>Estabeleça limites de gastos por categoria e receba alertas quando estiver se aproximando deles.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Relatórios Detalhados</h3>
+                    <p>Gere relatórios visuais para analisar seus padrões de gastos e identificar oportunidades de economia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Comece a transformar sua vida financeira hoje</h2>
+            <p>Junte-se a milhares de usuários que já alcançaram o controle total de suas finanças com o Luberior.</p>
+            <button class="btn btn-light">Criar Minha Conta</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Luberior</h3>
+                    <p>Sua plataforma minimalista para gerenciamento financeiro pessoal e profissional.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Produto</h3>
+                    <ul>
+                        <li><a href="#">Recursos</a></li>
+                        <li><a href="#">Planos</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Luberior - Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

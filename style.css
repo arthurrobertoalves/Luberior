@@ -1,0 +1,402 @@
+ :root {
+            --verde-principal: #2ecc71;
+            --verde-escuro: #27ae60;
+            --cinza-escuro: #2c3e50;
+            --cinza-medio: #7f8c8d;
+            --cinza-claro: #ecf0f1;
+            --branco: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--branco);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--verde-principal);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--cinza-escuro);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--verde-principal);
+        }
+        
+        .btn {
+            background-color: var(--verde-principal);
+            color: var(--branco);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--verde-escuro);
+        }
+        
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background-color: var(--branco);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--cinza-escuro);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: var(--cinza-medio);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .calculator-section {
+            padding: 80px 0;
+            background-color: var(--cinza-claro);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--cinza-escuro);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--cinza-medio);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--branco);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .calculator-form {
+            padding: 40px;
+        }
+        
+        .calculator-results {
+            padding: 40px;
+            background-color: rgba(46, 204, 113, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--cinza-escuro);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: var(--verde-principal);
+            outline: none;
+        }
+        
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .result-label {
+            color: var(--cinza-escuro);
+        }
+        
+        .result-value {
+            font-weight: 600;
+            color: var(--verde-principal);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--verde-principal);
+            border-radius: 4px;
+        }
+        
+        .investment-section {
+            padding: 80px 0;
+            background-color: var(--branco);
+        }
+        
+        .investment-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .investment-card {
+            background-color: var(--branco);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .investment-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .investment-card h3 {
+            font-size: 22px;
+            color: var(--cinza-escuro);
+            margin-bottom: 15px;
+        }
+        
+        .investment-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--verde-principal);
+            margin: 20px 0;
+        }
+        
+        .investment-details {
+            color: var(--cinza-medio);
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        
+        .features {
+            padding: 80px 0;
+            background-color: var(--cinza-claro);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--branco);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(46, 204, 113, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 24px;
+            color: var(--verde-principal);
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--cinza-escuro);
+        }
+        
+        .feature-card p {
+            color: var(--cinza-medio);
+            line-height: 1.6;
+        }
+        
+        .cta {
+            padding: 100px 0;
+            background-color: var(--verde-principal);
+            color: var(--branco);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .btn-light {
+            background-color: var(--branco);
+            color: var(--verde-principal);
+        }
+        
+        .btn-light:hover {
+            background-color: var(--cinza-claro);
+        }
+        
+        footer {
+            background-color: var(--cinza-escuro);
+            color: var(--branco);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--verde-principal);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--cinza-claro);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--verde-principal);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bdc3c7;
+        }
+        
+        @media (max-width: 968px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .investment-cards {
+                grid-template-columns: 1fr;
+            }
+        }
